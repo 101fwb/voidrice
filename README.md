@@ -27,27 +27,16 @@ Check other config folders for more specific documentation. For example [config 
 
 [i3 guide and config](.config/i3/i3_guide.md)
 
-[Email configuration](.config/mutt/email.md) 
+[Email configuration](.config/mutt/email.md)
 
-[ranger configuration](.config/ranger/luke_ranger_readme.md) 
+[ranger configuration](.config/ranger/luke_ranger_readme.md)
 
 ## Dynamic Configuration Files
 
-One of the most notable parts of my setup is that my ~/.bashrc and configs for ranger and qutebrowser are dynamically synchronized with by `~/.config/Scripts/shortcuts.py`. Each config file has a "base" form to which directory shortcuts are added and synchronized every time i3 refreshes or when you press Super+F2.
 
-Each of these programs have shortcuts to edit config files and to go to or move files to certain directories. Each time `shortcuts.py` is run, the pairs in both `~/.config/Scripts/folders` and `~/.config/Scripts/configs` are put in the syntax of each application, added to the base configs, and the plopped in the appropriate location.
+Store your favorite or high-traffic folders in `~/.config/Scripts/folders` or your most important config files in `~/.config/Scripts/configs` with keyboard shortcuts. When you add things to theses files my vimrc will automatically run `~/.config/Scripts/shortcuts.py` which will dynamically generate shortcuts for these in bash, ranger and qutebrowser!
 
-### What does this mean?
-
-1. You can easily add directory shortcuts in `~/.config/Scripts/folders` (just type cff in bash) or aliases to configs in `~/.config/Scripts/configs` (just type cfc in bash).
-2. Each time you run `shortcuts.py`, this script takes the input from the above files and puts it in the required syntax for bash, ranger and qutebrowser.
-3. This keeps all your configs in sync and you can use the same shortcuts in each program and allows you to add more easily as you need them for your folder structure.
-
-**Note: to have persistent changes in bash or ranger configs, be sure to edit not ~/.bashrc (which is replaced each time), but ~/.config/Scripts/bashrc, which is the base that `shortcuts.py` builds off of.** There is already the alias of `cfb` to edit this file. **Just remember to run `shortcuts.py` (Super+F2) after to apply the changes.**
-
-### That's confusing!
-
-Then simply remove the line in the i3 config that runs `shortcuts.py` and then edit configs as usual.
+Check out more info at the main repo for this: [shortcut-sync](https://github.com/lukesmithxyz/shortcut-sync). You will really want to take advantage of this for an extremely efficient setup!
 
 ## Like my rice?
 
